@@ -63,19 +63,20 @@
         <h1 class="title">Tweeter</h1>
         <br><br>
         <table>
-            <form action="#" method="POST">
+            <form action="register_process.php" method="POST">
                 <tr>
-                    <td style="width: 50%; font-weight:bold; font-family:'Poppins'; font-size: 25px; text-align:center">Registrasi</td>
+                    <td style="width: 50%; font-weight:bold; font-family:'Poppins'; font-size: 25px; text-align:center">
+                        Registrasi</td>
                     <td rowspan="8"><img src="images/regis.webp" alt="" width="80%"></td>
                 </tr>
                 <tr>
                     <td>
-                        <center><input class="input" type="text" placeholder="Username"></center>
+                        <center><input class="input" type="text" name="username" placeholder="Username"></center>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <center><input class="input" type="password" placeholder="Password"></center>
+                        <center><input class="input" type="password" name="password" placeholder="Password"></center>
                     </td>
                 </tr>
                 <tr>
@@ -85,12 +86,13 @@
                 </tr>
                 <tr>
                     <td>
-                        <center><input class="input" type="text" placeholder="Nama Lengkap"></center>
+                        <center><input class="input" name="full_name" type="text" placeholder="Nama Lengkap"></center>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <center><textarea class="input-bio" name="" id="" placeholder="Bio (Ceritakan tentang dirimu)"></textarea></center>
+                        <center><textarea class="input-bio" name="bio" id=""
+                                placeholder="Bio (Ceritakan tentang dirimu)"></textarea></center>
                     </td>
                 </tr>
                 <tr>
@@ -101,7 +103,8 @@
                 <tr>
                     <td>
                         <center>
-                            <p style="font-family: 'Poppins'; font-size:14px">Belum punya akun ? <a href="" style="color: #00ACED; text-decoration:none">Login</a></p>
+                            <p style="font-family: 'Poppins'; font-size:14px">Belum punya akun ? <a href="login.php"
+                                    style="color: #00ACED; text-decoration:none">Login</a></p>
                         </center>
                     </td>
                 </tr>

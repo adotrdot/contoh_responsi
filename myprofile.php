@@ -1,3 +1,14 @@
+<?php
+session_start();
+include("koneksi.php");
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +70,7 @@
 </head>
 
 <body>
-    <a href="" class="myButton"><img src="images/icon.png" alt="" width="60px" height="60px"></a>
+    <a href="logout.php" class="myButton"><img src="images/icon.png" alt="" width="60px" height="60px"></a>
     <h1 class="title">Tweeter</h1>
     <div class="box">
         <center>
@@ -70,12 +81,16 @@
         <b>
             <p class="label">Nama Lengkap : </p>
         </b>
-        <p class="tulisan">Alvin Aryanta</p>
+        <p class="tulisan">
+            <?php echo $row['full_name']; ?>
+        </p>
         <hr width="68%">
         <b>
             <p class="label">Bio : </p>
         </b>
-        <p class="tulisan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae optio id tenetur.</p>
+        <p class="tulisan">
+            <?php echo $row['bio']; ?>
+        </p>
         <hr width="68%">
         <br>
         <center>
