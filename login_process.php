@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row["password"])) {
-
+            $_SESSION['id'] = $row['id'];
             header("Location: myprofile.php");
             exit();
         } else {

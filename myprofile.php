@@ -15,6 +15,9 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>My Profile - Tweeter</title>
     <style>
         body {
@@ -49,6 +52,7 @@ if ($result->num_rows > 0) {
         }
 
         .button {
+            cursor: pointer;
             border-radius: 100px;
             height: 35px;
             width: 160px;
@@ -94,21 +98,19 @@ if ($result->num_rows > 0) {
         <hr width="68%">
         <br>
         <center>
-            <button class="button" style="background-color: #E7D746;">Edit</button>
+            <button class="button" style="background-color: #E7D746;" onclick="window.open('editprofile.php?id=<?= $row['id'] ?>', '_self')">Edit</button>
             <br><br>
-            <button class="button" style="background-color: #F44040;">Hapus Akun</button>
+            <button class="button" style="background-color: #F44040;" onclick="hapus()">Hapus Akun</button>
         </center>
     </div>
-    <!-- <button>Logout</button>
-    <h1>My Profile</h1>
-    <h2>Nama Lengkap:</h2>
-    <p>Alvin Aryanta</p>
-    <hr>
-    <h2>Bio:</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos totam, quam animi tempore non blanditiis eius soluta optio culpa ut voluptatem cumque? Ea quaerat esse repellat, error corrupti repudiandae asperiores tempore, adipisci qui expedita perspiciatis nulla possimus, pariatur unde rem.</p>
-    <hr>
-    <button>Edit</button>
-    <button>Hapus Akun</button> -->
+    
+    <script>
+        function hapus() {
+            if (confirm("Apakah kamu yakin ingin menghapus akun?")) {
+                window.open("delete.php?id=<?= $row['id'] ?>", '_self');
+            }
+	}
+    </script>
 </body>
 
 </html>
