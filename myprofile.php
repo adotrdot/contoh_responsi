@@ -2,7 +2,8 @@
 session_start();
 include("koneksi.php");
 
-$sql = "SELECT * FROM users";
+$id = $_SESSION["id"];
+$sql = "SELECT * FROM users WHERE id=$id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
